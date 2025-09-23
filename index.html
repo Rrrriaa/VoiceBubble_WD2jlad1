@@ -35,7 +35,12 @@
         productVersion: "0.1.0",
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
+      }).then((unityInstance) => {
+  // WebGL 컨텍스트 가져오기
+  const gl = canvas.getContext('webgl2', { alpha: true, premultipliedAlpha: false });
+  if (gl) {
+    console.log("WebGL context with alpha enabled");
+  });
     </script>
   </body>
 </html>
